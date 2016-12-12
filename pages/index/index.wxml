@@ -1,0 +1,15 @@
+<view class="navbar">
+  <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+    <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+  </view>
+</view>
+
+<!--TopTop 250-->
+<view class="{{currentNavbar==0 ? '':'hidden'}}">
+view1
+</view>
+
+<!--北美票房榜-->
+<view class="{{currentNavbar==1 ? '':'hidden'}}">
+view2
+</view>

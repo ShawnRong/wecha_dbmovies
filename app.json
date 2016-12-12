@@ -1,0 +1,27 @@
+{
+    "pages": [
+      "pages/index/index"
+    ],
+    "window": {
+      "backgroundTextStyle": "dark",
+      "navigationBarBackgroundColor": "white",
+      "navigationBarTitleText": "豆瓣电影",
+      "navigationBarTextStyle": "black",
+      "enablePullDownRefresh": true
+    },
+    "tabBar": {
+       "color": "white",
+       "backgroundColor": "rgba(0,0,0,0.50)",
+       "borderStyle": "black",
+       "list": [{
+        "pagePath": "pages/index/index",
+        "iconPath": "images/movie.png",
+        "selectedIconPath": "images/movie_light.png"
+      },{
+        "pagePath": "pages/index/index1",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search_light.png"  
+      }]
+     },
+    "debug":true
+}
