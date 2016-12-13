@@ -25,3 +25,12 @@
     display: none;
 }
 
+.latest-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1px;
+}
+.latest-image {
+    display: flex;
+    background: #eee;
+}
