@@ -9,15 +9,15 @@
   <block wx:for="{{top250_subjects}}" wx:for-index="idx">
     <view wx:if="{{idx%3===0}}" class="latest-item">
       <image src="{{top250_subjects[idx].images.large}}" class="latest-image"
-        data-row-id="{{latest_list[idx].row_id}}" bindtap="onItemClick"
+        data-movie-id="{{top250_subjects[idx].id}}" bindtap="onItemClick"
         style="width:{{(systemInfo.windowWidth-2)/3}}px;height:{{(systemInfo.windowWidth-2)/3*1.46}}px;" mode="scaleToFill">
       </image>
       <image src="{{top250_subjects[idx+1].images.large}}" class="latest-image"
-        data-row-id="{{latest_list[idx+1].row_id}}" bindtap="onItemClick"
+        data-movie-id="{{top250_subjects[idx+1].id}}" bindtap="onItemClick"
         style="width:{{(systemInfo.windowWidth-2)/3}}px;height:{{(systemInfo.windowWidth-2)/3*1.46}}px;" mode="scaleToFill">
       </image>
       <image src="{{top250_subjects[idx+2].images.large}}" class="latest-image"
-        data-row-id="{{latest_list[idx+2].row_id}}" bindtap="onItemClick"
+        data-movie-id="{{top250_subjects[idx+2].id}}" bindtap="onItemClick"
         style="width:{{(systemInfo.windowWidth-2)/3}}px;height:{{(systemInfo.windowWidth-2)/3*1.46}}px;" mode="scaleToFill">
       </image>
     </view>

@@ -21,20 +21,26 @@ Page({
   /**
    * 点击item
    */
-
-  onItemClick(){
-    console.log('s')
+  onItemClick(e){
+    console.log(e.currentTarget.dataset.movieId)
+    var targetUrl = '/pages/detail/detail'
+    if(e.currentTarget.dataset.movieId != null)
+      targetUrl = targetUrl + '?' + e.currentTarget.dataset.movieId
+    wx.navigateTo({
+      url: targetUrl
+    })
   },
 
   /**
    * 切换 navbar
    */
   swichNav (e) {
-    this.setData({
+    var page = this
+    page.setData({
       currentNavbar: e.currentTarget.dataset.idx
     })
-    if (e.currentTarget.dataset.idx == 1 && this.data.latest_list.length == 0) {
-      this.pullUpLoadLatest()
+    if (e.currentTarget.dataset.idx == 1 && page.data.latest_list.length == 0) {
+      page.pullUpLoadLatest()
     }
   },
     /**
@@ -62,6 +68,7 @@ Page({
       },
       complete: function() {
         // complete
+        wx.hideNavigationBarLoading()
       }
     })
   },
@@ -84,7 +91,7 @@ Page({
       }, // 设置请求的 header
       success: function(res){
         // success
-        console.log(res)
+        // console.log(res)
         page.setData({
           top250_subjects:page.data.top250_subjects.concat(res.data.subjects),
           top250_count:page.data.top250_count+res.data.count
@@ -95,6 +102,7 @@ Page({
       },
       complete: function() {
         // complete
+        wx.hideNavigationBarLoading()
       }
     })
   }
