@@ -22,10 +22,9 @@ Page({
    * 点击item
    */
   onItemClick(e){
-    console.log(e.currentTarget.dataset.movieId)
     var targetUrl = '/pages/detail/detail'
     if(e.currentTarget.dataset.movieId != null)
-      targetUrl = targetUrl + '?' + e.currentTarget.dataset.movieId
+      targetUrl = targetUrl + '?movieID=' + e.currentTarget.dataset.movieId+'&title='+e.currentTarget.dataset.title
     wx.navigateTo({
       url: targetUrl
     })
